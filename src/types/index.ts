@@ -224,3 +224,42 @@ export interface Toast {
   description?: string;
   duration?: number;
 }
+
+// Venture Types
+export interface Pitch {
+  id: string;
+  founderId: string;
+  founderName: string;
+  founderDisplayName?: string;
+  title: string;
+  vision: string;
+  traction: Record<string, any>;
+  fundingAsk: number;
+  currency: string;
+  status: 'active' | 'closed' | 'funded';
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Shipment {
+  id: string;
+  founderId: string;
+  postId?: string;
+  repoUrl: string;
+  commitHash: string;
+  branch: string;
+  description: string;
+  verifiedBy?: string;
+  impactScore: number;
+  createdAt: string;
+}
+
+export interface VentureInterest {
+  id: string;
+  pitchId: string;
+  investorId: string;
+  amount: number;
+  message?: string;
+  status: 'pending' | 'committed' | 'declined';
+  createdAt: string;
+}
